@@ -1,18 +1,13 @@
 package codesprinters.autojava;
 
-public class Rectangle extends AbstractShape {
+public class Rectangle extends AbstractShape implements Shape {
 	
 	private double a;
 	private double b;
 	
 	public Rectangle(double a, double b) {
 		this.a = a;
-		this.a = b;
-	}
-
-	@Override
-	public double getArea() {
-		return a*b;
+		this.b = b;
 	}
 
 	public double getA() {
@@ -21,5 +16,9 @@ public class Rectangle extends AbstractShape {
 
 	public double getB() {
 		return b;
+	}
+
+	public double getArea() {
+		return a*b;
 	}
 }

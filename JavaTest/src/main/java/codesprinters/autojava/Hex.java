@@ -1,21 +1,19 @@
 package codesprinters.autojava;
 
-public class Hex extends AbstractShape {
+public class Hex extends AbstractShape implements Shape {
 
-	public String getSide() {
-		return "" + a;
-	}
+    public Double getSide() {
+        return a;
+    }
 
-	private double a;
-	
-	private Hex(double a) {
-		this.a = a;
-	}
+    private double a;
 
-	@Override
-	public double getArea() {
-		Triangle t = Triangle (a, a, a);
-		6 * t.getArea();
-	}
+    public Hex(double a) {
+        this.a = a;
+    }
 
+    public double getArea() {
+        Triangle t = new Triangle(a, a, a);
+        return 6 * t.getArea();
+    }
 }
