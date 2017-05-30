@@ -21,7 +21,7 @@ public class CodeSprintersTests extends TestBase {
         googlePage.googleFor(CODE_SPRINTERS, CodeSprintersPage.CODESPRINTERS_PAGE_TITLE);
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.titleIs(CodeSprintersPage.CODESPRINTERS_PAGE_TITLE));
+        wait.until(ExpectedConditions.titleIs("Wymagana kontrola bezpieczeństwa"));
 
         String currentUrl = driver.getCurrentUrl();
         Assert.assertTrue(currentUrl.endsWith(CodeSprintersPage.CODE_SPRINTERS_URL));
