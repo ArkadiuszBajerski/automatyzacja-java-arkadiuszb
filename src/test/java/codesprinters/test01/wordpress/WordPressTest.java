@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class WordPressTest extends TestBase {
 
 
-
     @Test
     public void goToWordPressPageAndOpenComment() {
         WordPressHomePage wordPressPage = new WordPressHomePage(this.driver);

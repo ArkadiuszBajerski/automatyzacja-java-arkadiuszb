@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class WordPressHomePage extends PageObject{
+public class WordPressHomePage extends PageObject {
 
 
     private By thirdCommentOnPage = By.xpath("(//span[@class='comments-link'])[3]");
@@ -16,7 +16,7 @@ public class WordPressHomePage extends PageObject{
         super(drv);
     }
 
-    public void goToWordPress(){
+    public void goToWordPress() {
         driver.get(wordPressUrl);
     }
 
@@ -24,5 +24,4 @@ public class WordPressHomePage extends PageObject{
         WebElement thirdComment = driver.findElement(thirdCommentOnPage);
         thirdComment.click();
     }
-
 }

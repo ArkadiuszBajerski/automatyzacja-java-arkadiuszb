@@ -41,7 +41,7 @@ public class BasicTest {
 
         Assert.assertEquals(currentUrl, "http://agileszkolenia.pl/");
 
-        if(driver!=null){
+        if (driver != null) {
             driver.quit();
         }
     }
