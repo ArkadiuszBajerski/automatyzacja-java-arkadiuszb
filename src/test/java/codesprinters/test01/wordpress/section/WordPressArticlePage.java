@@ -10,9 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-
 
 public class WordPressArticlePage extends PageObject {
 
@@ -49,15 +46,12 @@ public class WordPressArticlePage extends PageObject {
         submitButton.click();
     }
 
-    public boolean hasComment(String text){
-        List<WebElement> comments = driver.findElements(By.xpath("//div[@class='comment-content']"));
-        return comments.contains(text);
-    }
-
-    public WordPressArticlePage assertComment(String expectedComment){
-        List<WebElement> comments = driver.findElements(By.xpath("//div[@class='comment-content']"));
-        String actualComment = comments.contains(expectedComment);
-
-        return this;
+    public boolean hasText(String expectedComment) {
+        List<WebElement> comments = driver.findElements(By.xpath("//*[contains(text(), '" + expectedComment + "')]"));
+        int count = comments.size();
+        if (count == 1) {
+            return !comments.isEmpty();
+        }
+        return false;
     }
 }
